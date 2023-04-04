@@ -30,7 +30,7 @@ Victa allows students to still treat patients without having to leave the safety
 
 ## Installation:
 * Download and install the prerequisites
-* Clone and download this repository from GitLab
+* Clone and download this repository from GitHub
 * Go to the VictawebsiteDB folder in this repository and download it
 * Go to MySQL and make sure **VictawebsiteDB** is there
 * Go to `src/main/resources/application.properties` add your username and password. This allows MySQL to connect to Victa.
