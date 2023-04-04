@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Assess Case</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Image for the background -->
+<style>
+body {
+	background-image: url("../images/cons.jpg");
+	background-size: 100%;
+}
+</style>
+     
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    </head>
+<body>
+
+
+
+
+    <h2 style="color:blue;" >Assess Case for <span th:text="${patient.FirstName} + ' ' + ${patient.Surname}" ></span> </h2><br><br></center>
+    <p>Please select Patients Symptoms/information</p>
+    <p>>- Submit ONE sympton at a time.</p><br><br></center>
+
+    <form method="POST" th:action="@{/saveConsultation/{id}(id = ${patient.patientNumber})}" th:object="${userConsul}">
+        <label for="epidemiology">EPIDEMIOLOGY:</label>
+            <select id="epidemiology" th:field="*{epidemiology}">
+                <option th:each="data : ${consultationData}"
+                        th:text="${data.epidemiology}"
+                        th:value="${data.epidemiology}"
+                        th:field="*{epidemiology}"    ></option>
+            </select>
+
+<!--        <input th:field="*{epidemiology}"   id="password" placeholder="Password" type="password"/>-->
+        <br><br>
+        <label for="complaints">COMPLAINTS:</label>
+            <select id="complaints" th:field="*{complaints}">
+                <option th:each="data : ${consultationData}"
+                    th:text="${data.complaints}"
+                        th:value="${data.complaints}"> </option>
+            </select>
+            <br><br>
+
+        <label for="examination">PATIENT EXAMINATIONS:</label>
+            <select id="examination" th:field="*{examination}">
+                <option th:each=" data : ${consultationData}"
+                    th:text="${data.labData}"
+                        th:value="${data.labData}"> </option>
+            </select>
+        <br><br>
+
+        <label for="diagnosis1">Diagnosis 1:</label>
+            <select id="diagnosis1" name="diagnosis1" th:field="*{diagnosis1}">
+                <option th:each="data : ${consultationData}" th:value="${data.epidemiology}" th:text="${data.epidemiology}"></option></select>
+        <br><br>
+
+        <label for="diagnosis2">Diagnosis 2:</label>
+        <select id="diagnosis2" name="diagnosis2"  th:field="*{diagnosis2}">
+            <option th:each="data : ${consultationData}" th:value="${data.epidemiology}" th:text="${data.epidemiology}"></option></select>
+        <br><br>
+
+        <label for="diagnosis3">Diagnosis 3:</label>
+        <select id="diagnosis3" name="diagnosis3"  th:field="*{diagnosis3}">
+            <option th:each="data : ${consultationData}" th:value="${data.epidemiology}" th:text="${data.epidemiology}"></option></select>
+        <br>
+        <input th:field="*{message}"   id="message" placeholder="Enter Why you picked these Diagnosises" type="text"/>
+
+        <h3>Please select from options, enter reasoning from current most likely diagnosis, and click submit:</h3><br>
+        <br> <br>
+
+        <button th:href="@{/saveConsultation/{id}(id = ${patient.patientNumber})}" disabled="disabled" type="submit" id="consultationButton">Submit</button>
+
+
+    </form><br>
+
+<script>
+    let message = document.getElementById("message");
+    let consultationButton = document.getElementById("consultationButton")
+    message.addEventListener('input',()=>{
+        if (message.value.length>0){
+            consultationButton.removeAttribute('disabled');
+        }
+        else {
+            consultationButton.setAttribute('disabled','disabled')
+        }
+    })
+
+</script>
+
+
+
+
+
+</body>
+</html>

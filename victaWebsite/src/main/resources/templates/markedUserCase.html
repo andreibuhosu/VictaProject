@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Case</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>View Patient Details</title>
+    <base href="/">
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\viewPatientsDetailsCss.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+</head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1>
+                    <span class="primary-text">Welcome</span>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <ul>
+                            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                            <li><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                            <li><a th:href="@{/mail}">MailBox</a></li>
+                            <li><a th:href="@{/logout}">Logout</a></li>
+
+
+                        </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <h2 style="color:#56a79a; text-align: center">Marked User Case Answer</h2>
+    <table id="patients">
+        <tr>
+            <th>Consultation Header</th>
+            <th>Consultation data</th>
+        </tr>
+        <tr>
+            <td>User Case ID:</td>
+            <td th:text="${userCase.userCaseID}"></td>
+        </tr>
+        <tr>
+            <td>Student ID:</td>
+            <td th:text="${userCase.userid}"></td>
+        </tr>
+        <tr>
+            <td>Name Of Patient:</td>
+            <td th:text="${patient.firstName}+ ' ' + ${patient.surname}"></td>
+        </tr>
+        <tr>
+            <td>Epidemiology:</td>
+            <td th:text="${userCase.epidemiology}"></td>
+        </tr>
+        <tr>
+            <td>Complaints:</td>
+            <td th:text="${userCase.complaints}"></td>
+        </tr>
+        <tr>
+            <td>Examination:</td>
+            <td th:text="${userCase.epidemiology}"></td>
+        </tr>
+        <tr>
+            <td>Diagnosis 1:</td>
+            <td th:text="${userCase.diagnosis1}"></td>
+        </tr>
+        <tr>
+            <td>Diagnosis 2:</td>
+            <td th:text="${userCase.diagnosis2}"></td>
+        </tr>
+        <tr>
+            <td>Diagnosis 3:</td>
+            <td th:text="${userCase.diagnosis3}"></td>
+        </tr>
+        <tr>
+            <td>Reasoning for choosing these Diagnosises:</td>
+            <td th:text="${userCase.message}"></td>
+        </tr>
+
+    </table>
+</div>
+
+
+</body>
+</html>
+
+</body>
+</html>

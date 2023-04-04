@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Case</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>View Patient Details</title>
+    <base href="/">
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\viewPatientsDetailsCss.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+</head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1>
+                    <span class="primary-text">Welcome</span>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <ul>
+                            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                            <li><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                            <li><a th:href="@{/mail}">MailBox</a></li>
+                            <li><a th:href="@{/view/feedbackhomepage/{id}(id = ${userid})}">View Grade</a></li>
+                            <li><a th:href="@{/logout}">Logout</a></li>
+
+
+                        </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <h2 style="color:#56a79a; text-align: center">Feedback</h2>
+    <table id="patients">
+        <tr>
+            <th>Header</th>
+            <th>Teacher Feedback/data</th>
+        </tr>
+        <tr>
+            <td>Grade:</td>
+            <td th:text="${feedback.grade}"></td>
+        </tr>
+        <tr>
+            <td>Reason For Getting this Grade:</td>
+            <td th:text="${feedback.message}"></td>
+        </tr>
+        <tr>
+            <td>User Case ID:</td>
+            <td th:text="${feedback.usercaseid}"></td>
+        </tr>
+        <tr>
+            <td>Student ID:</td>
+            <td th:text="${feedback.userid}"></td>
+        </tr>
+
+    </table>
+</div>
+
+
+</body>
+</html>
+
+</body>
+</html>

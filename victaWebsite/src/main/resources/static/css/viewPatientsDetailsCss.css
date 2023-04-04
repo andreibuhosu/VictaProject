@@ -1,0 +1,147 @@
+h2{
+    text-align: center;
+}
+#patients{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#patients td, #patients th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 30%;
+}
+#patients tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#patients tr:hover {
+    background-color: #ddd;
+}
+#patients th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #56a79a;
+  color: white;
+}
+input input[type=submit]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+
+  display: block;
+  width: 50%;
+  max-width: 250px;
+  height: 50px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #cccccc;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+#btn button{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    }
+
+
+
+#patient_history{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#patient_history td, #patient_history th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 30%;
+}
+#patient_history tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#patient_history tr:hover {
+    background-color: #ddd;
+}
+#patient_history th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #56a79a;
+    color: white;
+}
+
+
+#patient_diagnosis{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#patient_diagnosis td, #patient_diagnosis th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 30%;
+}
+#patient_diagnosis tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#patient_diagnosis tr:hover {
+    background-color: #ddd;
+}
+#patient_diagnosis th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #56a79a;
+    color: white;
+}
+
+
+#patient_treatment{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#patient_treatment td, #patient_treatment th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 30%;
+}
+#patient_treatment tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#patient_treatment tr:hover {
+    background-color: #ddd;
+}
+#patient_treatment th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #56a79a;
+    color: white;
+}

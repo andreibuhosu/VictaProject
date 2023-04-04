@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <base href="/">
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <h1>
+                        <span class="primary-text">Welcome</span>
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <nav id="navbar">
+                        <ul>
+                            <li class="current"><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                            <li><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                            <li><a th:href="@{/mail}">MailBox</a></li>
+                            <li><a th:href="@{/view/feedbackhomepage/{id}(id = ${userid})}">View Grade</a></li>
+                            <li><a th:href="@{/patientList}">View Patients</a></li>
+                            <li><a th:href="@{/logout}">Logout</a></li>
+
+
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="section-1">
+
+            <h1 class="section-1-title">Welcome to the dashboard <span th:text="${message}"></span></h1>
+        </div>
+
+        <div class="section-2">
+            <h2 class="section-2-title">Latest News:</h2>
+
+
+            <div class="alert alert-dark" role="alert">
+                <span><i> <strong th:text="${mailMessage}"></strong></i></span>
+            </div>
+
+<!--            <p class="section-2-content"><span><i> <strong th:text="${mailMessage}"></strong></i></span></p>-->
+            <p class="section-2-content">Welcome to the Virtual Training Hospital System! Enjoy! Please ensure you log out
+                and close the browser when you have finished to ensure profile security</p>
+        </div>
+    </div>
+</body>
+</html>

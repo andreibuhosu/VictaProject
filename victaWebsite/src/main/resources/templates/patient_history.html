@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><html lang="en" xmlns:th = "http://www.thymeleaf.org"><head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Patient History</title>
+        <base href="/">
+        <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+        <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+        <link rel="stylesheet" href="css\viewPatientsHistoryCss.css" type="text/css">
+        <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+    </head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1>
+                    <span class="primary-text">Welcome</span>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                        <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                        <li><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                        <li><a th:href="@{/mail}">Mailbox</a></li>
+                        <li><a th:href="@{/view/feedbackhomepage/{id}(id = ${userid})}">View Grade</a></li>
+                        <li><a th:href="@{/patientList}">View Patients</a></li>
+                        <li><a th:href="@{/logout}">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container"><br>
+    <table id="patients">
+        <tr>
+            <th>Known Allergies: </th>
+            <th>Data:</th>
+        </tr>
+        <tr>
+            <td>Allergy 1:</td>
+
+            <td> <a th:href="'https://pubmed.ncbi.nlm.nih.gov/?term='+${allergies.Known_Allergies_1}" th:text="${allergies.Known_Allergies_1}" target="_blank"></a> </td>
+        </tr>
+        <tr>
+            <td>Allergy 2:</td>
+            <td> <a th:href="'https://pubmed.ncbi.nlm.nih.gov/?term='+${allergies.Known_Allergies_2}" th:text="${allergies.Known_Allergies_2}" target="_blank"></a> </td>
+        </tr>
+    </table><br>
+    <table id="patients">
+
+        <th>Past Diagnosis:</th>
+        <tr th:each="p : ${past}">
+            <td><a th:href="'https://pubmed.ncbi.nlm.nih.gov/?term='+${p.Col1}" th:text="${p.Col1}" target="_blank"></a></td>
+        </tr>
+    </table><br>
+
+    <table id="patients">
+
+        <th>PastTreatment:</th>
+        <tr th:each="t : ${treatment}">
+            <td><a th:href="'https://pubmed.ncbi.nlm.nih.gov/?term='+${t.Col1}" th:text="${t.Col1}" target="_blank"></a></td>
+        </tr>
+    </table>
+
+    <div class="center"><br>
+        <a th:href="@{/cons/{id}(id = ${patientid})}">
+            <button class="btn" id="btn">To Consultation Page</button>
+        </a></div>
+</div>
+</body>
+</html>

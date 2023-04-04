@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>View Patient Details</title>
+    <base href="/">
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\viewPatientsDetailsCss.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+</head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1>
+                    <span class="primary-text">Welcome</span>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <ul>
+                            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                            <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                            <li><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                            <li><a th:href="@{/mail}">MailBox</a></li>
+                            <li><a th:href="@{/view/feedbackhomepage/{id}(id = ${userid})}">View Grade</a></li>
+                            <li class="current"><a th:href="@{/patientList}">View Patients</a></li>
+                            <li><a th:href="@{/logout}">Logout</a></li>
+
+
+                        </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <h2 style="color:#56a79a; text-align: center">Patients Infomation</h2>
+    <table id="patients">
+        <tr>
+            <th>General Information</th>
+            <th>Data</th>
+        </tr>
+        <tr>
+            <td>First name:</td>
+            <td th:text="${users.FirstName}"></td>
+        </tr>
+        <tr>
+            <td>Surname:</td>
+            <td th:text="${users.Surname}"></td>
+        </tr>
+        <tr>
+            <td>Date Of Birth:</td>
+            <td th:text="${users.DateofBirth}"></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td th:text="${users.Age}"></td>
+        </tr>
+        <tr>
+            <td>Sex:</td>
+            <td th:text="${users.SexGender}"></td>
+        </tr>
+        <tr>
+            <td>Race:</td>
+            <td th:text="${users.Race}"></td>
+        </tr>
+        <tr>
+            <td>Tribe:</td>
+            <td th:text="${users.Tribe}"></td>
+        </tr>
+        <tr>
+            <td>Clan:</td>
+            <td th:text="${users.Clan}"></td>
+        </tr>
+        <tr>
+            <td>Totem:</td>
+            <td th:text="${users.Totem}"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td th:text="${users.Address}"></td>
+        </tr>
+        <tr>
+            <td>Hospital Name:</td>
+            <td th:text="${users.HospitalName}"></td>
+        </tr>
+        <tr>
+            <td>Marital Status:</td>
+            <td th:text="${users.MaritalStatus}"></td>
+        </tr>
+        <tr>
+            <td>Next Of Kin:</td>
+            <td th:text="${users.Nextofkin}"></td>
+        </tr>
+
+    </table>
+    <div class="center"><br>
+        <a th:href="@{/patienthistory/{id}(id = ${users.patientNumber})}">
+            <button class="btn" id="btn">Next</button>
+        </a>
+    </div>
+</div>
+
+
+</body>
+</html>

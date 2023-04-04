@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <link rel="stylesheet" href="css\flexstyle.css" type="text/css">
+
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+<!--    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">-->
+
+    <!-- Main css -->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form method="POST" th:action="@{/createAccount}" th:object="${userSignup}" id="signup-form">
+                <h2>Create account</h2>
+                <div>
+                    <input th:field="*{firstname}" id="firstname" placeholder="Firstname"/>
+                    <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" ></span>
+
+                </div>
+                <div>
+                    <input th:field="*{lastname}"   id="lastname" placeholder="lastname" type="text"/>
+
+                    <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" ></span>
+                </div>
+
+                <div>
+                    <input th:field="*{username}" id="username" placeholder="username" type="text"/>
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" ></span>
+                </div>
+
+                <div>
+                    <input th:field="*{email}"   id="email" placeholder="email" type="text"/>
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+                </div>
+
+                <div>
+                    <input th:field="*{password}"   id="password" placeholder="password" type="password"/>
+                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" ></span>
+                </div>
+
+                <div>
+                    <input th:field="*{password2}"   id="password2" placeholder="re-enter password" type="password"/>
+                    <span th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}" ></span>
+                </div>
+
+
+                <button type="submit" >Sign Up</button>
+            </form>
+
+        </div> <br> <br>
+        <a th:href="@{/home}">Click to go back to the home page</a>
+    </div>
+
+</body>
+</html>

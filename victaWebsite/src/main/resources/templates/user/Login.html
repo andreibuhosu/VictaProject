@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <base href="/">
+
+    <link rel="stylesheet" href="css\flexstyle.css" type="text/css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="form">
+        <form method="POST" th:action="@{/login}" th:object="${userLogin}" id="signup-form" >
+            <h2>Login</h2>
+            <span><i th:text="${message}"></i></span>
+            <div>
+                <input th:field="*{username}"   id="username" placeholder="Username"/>
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" ></span>
+            </div>
+            <div>
+                <input th:field="*{password}"   id="password" placeholder="Password" type="password"/>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" ></span>
+
+            </div>
+            <button  type="submit" >Login</button>
+        </form>
+    </div> <br> <br>
+    <a th:href="@{/home}">Click to go back to the home page</a>
+</div>
+</body>
+</html>

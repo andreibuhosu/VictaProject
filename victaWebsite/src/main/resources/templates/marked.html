@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head><base href="/">
+  <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+  <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+  <link rel="stylesheet" href="css\viewPatientsListCss.css" type="text/css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+  <meta charset="UTF-8">
+  <title>Patients List</title>
+
+</head>
+<body>
+<header id="main-header">
+  <div class="container">
+    <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <h1>
+          <span class="primary-text">Welcome</span>
+        </h1>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+        <nav id="navbar">
+          <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/patientList}">Assess Cases</a></li>
+            <li class="current"><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+            <li><a th:href="@{/mail}">Mailbox</a></li>
+            <li><a th:href="@{/patientList}">View Patients</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<h1>Pick a Marked User Case:</h1>
+<h3><span th:text="${markedMessage}"></span></h3>
+
+<table id="cases">
+  <tr>
+    <th>Patient Name</th>
+  </tr>
+  <tr>
+  <tr th:each="user : ${findMarked}">
+
+
+
+  <td><a th:href="@{/view/marked/usercase/{usercaseid}(usercaseid = ${user.userCaseID})}"  th:text="'User case ID:' + ${user.userCaseID} + ' StudentID is: ' + ${user.userid}"></a></td>
+  </tr>
+
+</table>
+
+
+</body>

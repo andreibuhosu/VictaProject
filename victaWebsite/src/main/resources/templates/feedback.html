@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback</title>
+
+    <link rel="stylesheet" href="css\flexstyle2.css" type="text/css">
+    <link rel="stylesheet" href="css\mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css\viewPatientsDetailsCss.css" type="text/css">
+    <link rel="stylesheet" href="css\flexboxgrid.css" type="text/css">
+</head>
+<body>
+<header id="main-header">
+    <div class="container">
+        <div class="row end-sm end-md end-lg middle-xs middle-sm middle-md middle-lg">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <h1>
+                    <span class="primary-text">Welcome</span>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <nav id="navbar">
+                    <ul>
+                        <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                        <li><a th:href="@{/patientList}">Assess Cases</a></li>
+                        <li class="current"><a th:href="@{/view/accessgrade}">View and Grade Cases</a></li>
+                        <li><a th:href="@{/mail}">Mailbox</a></li>
+                        <li><a th:href="@{/patientList}">View Patients</a></li>
+                        <li><a th:href="@{/logout}">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form method="POST" th:action="@{/view/feedbackGiven/{usercaseid}(usercaseid = ${userCase.userCaseID})}" th:object="${feedbackForm}" id="signup-form" >
+    <label>Enter A Grade Between 0-100:</label> <br>
+    <input th:field="*{grade}"   id="grade" placeholder="Enter A Grade Between 0-100"/> <br> <br>
+    <label>Enter The Reasoning Given Grade:</label> <br>
+    <input th:field="*{message}" id="feedbackMessage" placeholder="Enter Reason For Grade">
+
+    <button type="submit" >Submit Feedback</button>
+</form>
+
+
+
+
+</body>
+</html>
