@@ -2,13 +2,15 @@
 Victa is a medical website that was created to help medical students improve their diagnosing skills.
 
 ### Victa Home Page
-![victahome](/uploads/11489a211033359e49ee831f4bb73547/victahome.png)
+![victahome](https://github.com/andreibuhosu/VictaProject/assets/99267298/7e7baca2-7466-4e99-a0f1-af4cd73ddcc5)
+
 
 ### Victa Login Page
-![login](/uploads/e1162826ffbe1fcb36b7fbcdf091e3e7/login.png)
+![login](https://github.com/andreibuhosu/VictaProject/assets/99267298/b39f19da-ed43-49c8-8b8f-5c97612ba6e9)
+
 
 ### Victa Dashboard
-![dashboard](/uploads/6c3256cdadc354448970b39c1f9a9e26/dashboard.png)
+![dashboard](https://github.com/andreibuhosu/VictaProject/assets/99267298/f45edad1-1513-45ff-b61a-474e390d6c6f)
 
 ## Motivation
 During lockdown students were not allowed onto campus. This meant that they also couldn't go to the hospital and treat and talk to patients.
